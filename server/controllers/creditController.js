@@ -73,7 +73,7 @@ export const purchasePlans = async (req, res) => {
       isPaid: false,
     });
 
-    const { origin } = req.headers;
+    const origin = req.headers.origin || "http://localhost:5173";
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
