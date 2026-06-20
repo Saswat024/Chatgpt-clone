@@ -165,7 +165,7 @@ const SideBar = ({ isMenuOpen, setIsMenuOpen }) => {
           <img
             onClick={logout}
             src={assets.logout_icon}
-            className="h-5 cursor-pointer hidden not-dark:invert group-hover:block"
+            className="h-5 cursor-pointer block md:hidden not-dark:invert md:group-hover:block"
           />
         )}
       </div>
