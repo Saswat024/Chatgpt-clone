@@ -140,7 +140,7 @@ const SideBar = ({ isMenuOpen, setIsMenuOpen }) => {
       {/* {Dark Mode Toggle} */}
       <div className="flex items-center justify-between gap-2 p-3 mt-4 border border-gray-300 dark:border-white/15 rounded-md">
         <div className="flex items-center gap-2 text-sm">
-          <img src={assets.theme_icon} alt="" />
+          <img src={assets.theme_icon} className='dark:invert' alt="" height={20} width={20}/>
           <p>Dark Mode</p>
         </div>
         <label className="relative inline-flex cursor-pointer">

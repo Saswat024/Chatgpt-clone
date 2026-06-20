@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { dummyPlans } from '../assets/assets'
 import Loading from './Loading'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
