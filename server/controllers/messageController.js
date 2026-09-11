@@ -19,6 +19,11 @@ export const textMessageController = async (req, res) => {
 
     const { chatId, prompt } = req.body;
     const chat = await Chat.findOne({ userId, _id: chatId });
+
+    if (!chat) {
+      return res.json({ success: false, message: "Chat not found" });
+    }
+
     chat.messages.push({
       role: "user",
       content: prompt,
@@ -26,14 +31,15 @@ export const textMessageController = async (req, res) => {
       isImage: false,
     });
 
+    // Map conversation history so the model has access to previous messages
+    const conversationHistory = chat.messages.slice(-20).map((msg) => ({
+      role: msg.role === "assistant" ? "assistant" : "user",
+      content: msg.isImage ? `[Image: ${msg.content}]` : msg.content,
+    }));
+
     const { choices } = await openai.chat.completions.create({
-      model: "gemini-2.5-flash",
-      messages: [
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
+      model: "openai/gpt-oss-120b",
+      messages: conversationHistory,
     });
 
     const reply = {
