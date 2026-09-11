@@ -47,7 +47,7 @@ const SideBar = ({ isMenuOpen, setIsMenuOpen }) => {
       />
 
       {/* {New Chat Button} */}
-      <button onClick={createNewChat} className="flex items-center gap-2 w-full bg-gradient-to-r from-[#E6CCFF] to-[#80609F] text-[#380038] px-5 py-3 rounded-full font-medium mt-6 hover:opacity-90 transition-all duration-500">
+      <button onClick={createNewChat} className="flex items-center gap-2 w-full bg-gradient-to-r from-[#E6CCFF] to-[#80609F] text-[#380038] px-5 py-3 rounded-full font-medium mt-6 hover:opacity-90 transition-all duration-500 cursor-pointer">
         <span className="text-xl">+</span> New Chat
       </button>
 
