@@ -41,7 +41,7 @@ export const textMessageController = async (req, res) => {
       model: "openai/gpt-oss-120b",
       messages: conversationHistory,
     });
-
+    
     const reply = {
       ...choices[0].message,
       timestamp: Date.now(),
