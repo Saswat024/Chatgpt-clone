@@ -38,7 +38,7 @@ export const textMessageController = async (req, res) => {
     }));
 
     const { choices } = await openai.chat.completions.create({
-      model: "openai/gpt-oss-120b",
+      model: process.env.OPENAI_MODEL,
       messages: conversationHistory,
     });
     
