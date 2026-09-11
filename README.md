@@ -6,7 +6,7 @@ A full-stack ChatGPT and AI Image Generator clone built with the MERN stack (Mon
 
 ## 🚀 Features
 
-- **AI Text Chat**: Seamless interactive chat interface powered by generative language models.
+- **AI Text Chat**: Seamless interactive chat interface powered by gpt-oss-120b from OpenAI.
 - **AI Image Generation**: Generative image creation directly from text prompts using ImageKit AI.
 - **Publish to Community**: Showcase your generated AI images on the public community feed for other users to see.
 - **Community Feed**: A curated space where users can explore public images and see who generated them.
@@ -84,7 +84,9 @@ chatgpt-clone/
    PORT=3000
    MONGODB_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_signing_secret
-   GEMINI_API_KEY=your_gemini_api_key
+   GROQ_API_KEY=your_groq_api_key
+   GROQ_BASE_URL="https://api.groq.com/openai/v1"
+
 
    # ImageKit
    IMAGEKIT_PUBLIC_KEY=your_imagekit_public_key
