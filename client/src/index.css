@@ -17,6 +17,35 @@
   all: revert;
 }
 
+.reset-tw table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+.reset-tw th,
+.reset-tw td {
+  border: 1px solid rgba(150, 150, 150, 0.3) !important;
+  padding: 8px 12px !important;
+  text-align: left;
+}
+
+.reset-tw th {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  font-weight: 600;
+}
+
+.reset-tw tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.reset-tw a {
+  color: #a78bfa !important;
+  text-decoration: underline !important;
+}
+
 .loader div:nth-child(2){
   animation-delay: 0.15s;
 }

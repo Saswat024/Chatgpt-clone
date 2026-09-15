@@ -3,6 +3,8 @@ import { assets } from '../assets/assets'
 import moment from 'moment'
 import Markdown from 'react-markdown'
 import Prism from 'prismjs'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 
 const Message = ({ message }) => {
 
@@ -33,8 +35,10 @@ const Message = ({ message }) => {
               alt=""
             />
           ) : (
-            <div className="text-md dark:text-primary reset-tw">
-              <Markdown>{message.content}</Markdown>
+            <div className="text-md dark:text-primary reset-tw overflow-x-auto">
+              <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                {message.content}
+              </Markdown>
             </div>
           )}
           <span className="text-xs text-gray-500 dark:text-[#B1A6C0]">
